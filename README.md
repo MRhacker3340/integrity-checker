@@ -1,2 +1,2 @@
 # integrity-checker
-this tool is madhe for checkign intigrity of your file if its intercepted or not 
+this tool is made for checking integrity of your file if it was intercepted by any third person or not 
