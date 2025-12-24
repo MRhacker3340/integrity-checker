@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner! - Matrix Pharma Corp</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            /* Darkened overlay for better contrast against the card */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .winner-card {
+            background: white;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .header {
+            /* Light grey background from the logo image */
+            background-color: #f3f2f5; 
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+            text-transform: lowercase; /* Matches logo styling */
+            letter-spacing: 1px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-container {
+            width: 40px;
+            height: 40px;
+        }
+
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 10px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        h2 {
+            color: #28a745;
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .counter-box {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            border-color: #ef534e; /* Red/Coral focus color */
+            outline: none;
+        }
+
+        .claim-btn {
+            /* Brand Red/Coral color from logo squares */
+            background: #ef534e; 
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(239, 83, 78, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .claim-btn:hover {
+            background: #d32f2f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 83, 78, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="winner-card">
+        <div class="header">
+            <svg class="logo-container" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="42" y="5" width="16" height="16" fill="#ef534e" />
+                <rect x="42" y="79" width="16" height="16" fill="#ef534e" />
+                <rect x="5" y="42" width="16" height="16" fill="#ef534e" />
+                <rect x="79" y="42" width="16" height="16" fill="#ef534e" />
+                
+                <rect x="15" y="15" width="16" height="16" fill="#7a6b81" transform="rotate(-45 23 23)" />
+                <rect x="69" y="15" width="16" height="16" fill="#7a6b81" transform="rotate(45 77 23)" />
+                <rect x="15" y="69" width="16" height="16" fill="#7a6b81" transform="rotate(45 23 77)" />
+                <rect x="69" y="69" width="16" height="16" fill="#7a6b81" transform="rotate(-45 77 77)" />
+            </svg>
+            <div style="font-size: 24px;">matrix <span style="font-weight: normal; font-size: 14px;">pharma corp</span></div>
+        </div>
+        
+        <div class="content">
+            <span class="emoji">🎉</span>
+            <h2>Congratulations!</h2>
+            
+            <div class="counter-box">
+                You are the <span id="lucky-number">84</span>person to click this!<br>
+                ✨ You are eligible for the Early Bird Bonus! ✨
+            </div>
+
+            <form>
+                <div class="input-group">
+                    <label>Employee MID Number</label>
+                    <input type="text" placeholder="e.g. M100245" required>
+                    
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Your last name" required>
+                </div>
+                <button type="button" class="claim-btn" onclick="alert('Voucher successfully claimed! Check your email.')">REDEEM VOUCHER NOW</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const min = 1;
+        const max = 100;
+        const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.getElementById('lucky-number').innerText = randomNum;
+    </script>
+
+</body>
+</html>
